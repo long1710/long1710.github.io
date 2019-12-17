@@ -36,8 +36,8 @@ body {
 
 /*introduction css */
 .page1{
+    margin:0;
     text-align:center;
-    height:80vh;
     position: relative;
     background-image: url("starry sky.jpg");
     height: 100vh;
@@ -138,14 +138,12 @@ li{
 
 }
 
-.project{
-    position: relative;
-    height:100vh;
-}
 
 /*CSS of project*/
 .project {
-    height: 80vh;
+
+    background-color: rgba(137, 196, 244, 0.7);
+    height: 70vh;
     text-align: top;
     position: relative;
 }
@@ -218,8 +216,8 @@ li{
 .contact{
     text-align: center;
     background-color:black;
-    margin:-10vh;
     height:25vh;
+
 }
 .contact h4{
     color:white;
@@ -229,3 +227,10 @@ li{
   margin: 10px;
 }
 
+a{
+    text-decoration: none;
+}
+
+h1, h4{
+    margin-top:0;
+}

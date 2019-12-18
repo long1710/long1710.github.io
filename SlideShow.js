@@ -6,12 +6,28 @@ $(function(){
     var index = 0;
     console.log("ready")
     
-    setInterval(function(){
+    //interval for rotating slide
+
+
+    function intervalRotate(){
         degree = degree + 120
         var curr = index - 1;
         rotate(degree, curr);
-    }, 4000);
+    };
 
+    var timer = setInterval(function(){intervalRotate()}, 3000);
+
+    $(".information").mouseover(function(){
+        clearInterval(timer);
+        
+    })
+
+    $(".information").mouseout(function(){
+        timer = setInterval(function(){
+            intervalRotate()
+        }, 3000);;
+        
+    })
     $(".next").click(function(){
         degree = degree + 120;
         var curr = index - 1;
@@ -22,7 +38,9 @@ $(function(){
         var curr = index + 1;
         rotate(degree, curr);
     });
-    
+
+
+    //function for rotate
     function rotate(degree, curr){
         if(curr >= 3)
             curr = 0;
@@ -37,6 +55,7 @@ $(function(){
         })
     }
 
+    //function for appearing descriptions
     $('.descriptions ').hide();
 
     var image = $('.Image')
@@ -51,7 +70,7 @@ $(function(){
         },2000)
         $(descriptions[n]).show(2000);
     }
-
+    //smooth transition
     $(".nav-project, .nav-contact").click(function(e){
         if (this.hash !== ""){
             e.preventDefault();
@@ -62,4 +81,5 @@ $(function(){
                 window.location.hash = hash;
             })
       }})
+
 })

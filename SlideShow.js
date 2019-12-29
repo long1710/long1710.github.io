@@ -9,25 +9,7 @@ $(function(){
     //interval for rotating slide
 
 
-    function intervalRotate(){
-        degree = degree + 120
-        var curr = index - 1;
-        rotate(degree, curr);
-    };
 
-    var timer = setInterval(function(){intervalRotate()}, 3000);
-
-    $(".information").mouseover(function(){
-        clearInterval(timer);
-        
-    })
-
-    $(".information").mouseout(function(){
-        timer = setInterval(function(){
-            intervalRotate()
-        }, 3000);;
-        
-    })
     $(".next").click(function(){
         degree = degree + 120;
         var curr = index - 1;
@@ -57,16 +39,14 @@ $(function(){
 
     //function for appearing descriptions
     $('.descriptions ').hide();
-
-    var image = $('.Image')
     var descriptions = $('.descriptions');
     $('.chess').mouseover(function(){reveal($('.chess'), 0)});
     $('.timeTables').mouseover(function(){reveal($('.timeTables'), 1)});
     $('.minesweeper').mouseover(function(){reveal($('.minesweeper'), 2)});
     function reveal(target, n){
         $(target).animate({
-            width: "30%",
-            height: "300px"
+            width: "30vw",
+            height: "50vh"
         },2000)
         $(descriptions[n]).show(2000);
     }
